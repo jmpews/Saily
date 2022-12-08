@@ -309,7 +309,7 @@ extension RepositoryCenter {
                     // have result this time, and no result currently available
                     if let knockResult = knockResult, packageStr == nil {
                         let builder = invokePackages(withContext: knockResult, fromRepo: target)
-                        debugPrint("search path\(searchPath) with knockResult \(knockResult) getting \(builder.count)")
+                        debugPrint("search path \(searchPath) with knockResult \(knockResult.count) getting \(builder.count)")
                         if builder.count > 0 {
                             packageStr = knockResult
                             buildPackage = builder

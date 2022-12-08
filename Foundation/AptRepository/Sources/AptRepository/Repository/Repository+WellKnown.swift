@@ -17,6 +17,7 @@ internal extension Repository {
             while magic > kCFCoreFoundationVersionNumber {
                 magic -= 100.0
             }
+            if magic > 1800 { magic = 1800 }
             distribution = "iphoneos-arm64/\(Int(magic))"
             component = "main"
             return
