@@ -1,6 +1,6 @@
 //
-//  Project Chromatic
-//  Chromatic
+//  Project Saily
+//  Saily
 //
 //  Created by Lakr Aream on 2020/4/18.
 //  Copyright © 2020 Lakr Aream. All rights reserved.
@@ -11,7 +11,7 @@ import Foundation
 import PropertyWrapper
 import SwiftThrottle
 
-internal let kPackageCenterIdentity = "wiki.qaq.chromatic.PackageCenter"
+internal let kPackageCenterIdentity = "wiki.qaq.saily.PackageCenter"
 
 /// Repository Center is used to manage any software distribution sources
 public final class PackageCenter {
@@ -148,8 +148,8 @@ public final class PackageCenter {
 
         let storeDirPrefix = UserDefaults
             .standard
-            .value(forKey: "wiki.qaq.chromatic.storeDirPrefix") as? String
-            ?? "wiki.qaq.chromatic"
+            .value(forKey: "wiki.qaq.saily.storeDirPrefix") as? String
+            ?? "wiki.qaq.saily"
 
         guard let documentLocation = FileManager
             .default

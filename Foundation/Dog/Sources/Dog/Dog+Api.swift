@@ -1,6 +1,6 @@
 //
 //  Dog.swift
-//  Chromatic
+//  Saily
 //
 //  Created by Lakr Aream on 12/15/20.
 //
@@ -87,7 +87,7 @@ public extension Dog {
                 .first
         }
         guard let dispathDir = dispathDir else {
-            throw NSError(domain: "wiki.qaq.chromatic", code: -1, userInfo: [:])
+            throw NSError(domain: "wiki.qaq.saily", code: -1, userInfo: [:])
         }
 
         try? FileManager
@@ -107,7 +107,7 @@ public extension Dog {
             .fileExists(atPath: storeLocationDir.path, isDirectory: &bool)
         if !(dirValidate && bool.boolValue) {
             print("unable to initialize, permission denied at \(storeLocationDir.path)")
-            throw NSError(domain: "wiki.qaq.chromatic", code: -1, userInfo: [:])
+            throw NSError(domain: "wiki.qaq.saily", code: -1, userInfo: [:])
         }
 
         currentLogFileDirLocation = storeLocationDir
@@ -157,7 +157,7 @@ public extension Dog {
         if let handler = FileHandle(forWritingAtPath: logFileLocation.path) {
             logFileHandler = handler
         } else {
-            throw NSError(domain: "wiki.qaq.chromatic", code: -1, userInfo: [:])
+            throw NSError(domain: "wiki.qaq.saily", code: -1, userInfo: [:])
         }
 
         currentLogFileLocation = logFileLocation

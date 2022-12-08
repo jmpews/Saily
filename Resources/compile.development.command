@@ -11,9 +11,9 @@ cd ..
 
 GIT_ROOT=$(pwd)
 
-# assert that Chromatic.xcworkspace exists
-if [ ! -e "Chromatic.xcworkspace" ]; then
-    echo "Chromatic.xcworkspace not found!"
+# assert that Saily.xcworkspace exists
+if [ ! -e "Saily.xcworkspace" ]; then
+    echo "Saily.xcworkspace not found!"
     exit 1
 fi
 
@@ -44,8 +44,8 @@ WORKING_ROOT=$(pwd)
 echo "Starting build at $WORKING_ROOT"
 
 # xcodebuild and echo to xcpretty
-xcodebuild -workspace "$GIT_ROOT/Chromatic.xcworkspace" \
- -scheme Chromatic -configuration Debug \
+xcodebuild -workspace "$GIT_ROOT/Saily.xcworkspace" \
+ -scheme Saily -configuration Debug \
  -derivedDataPath "$WORKING_ROOT/DerivedDataApp" \
  -destination 'generic/platform=iOS' \
  clean build \
@@ -65,23 +65,23 @@ cd PackageBuilder || exit
 
 mkdir Applications
 # copy build result .app to Applications
-cp -r "$WORKING_ROOT/DerivedDataApp/Build/Products/Debug-iphoneos/chromatic.app" "./Applications/"
+cp -r "$WORKING_ROOT/DerivedDataApp/Build/Products/Debug-iphoneos/saily.app" "./Applications/"
 
-codesign --remove "./Applications/chromatic.app"
-if [ -e "./Applications/chromatic.app/_CodeSignature" ]; then
-    rm -rf "./Applications/chromatic.app/_CodeSignature"
+codesign --remove "./Applications/saily.app"
+if [ -e "./Applications/saily.app/_CodeSignature" ]; then
+    rm -rf "./Applications/saily.app/_CodeSignature"
 fi
-if [ -e "./Applications/chromatic.app/embedded.mobileprovision" ]; then
-    rm -rf "./Applications/chromatic.app/embedded.mobileprovision"
+if [ -e "./Applications/saily.app/embedded.mobileprovision" ]; then
+    rm -rf "./Applications/saily.app/embedded.mobileprovision"
 fi
 
-ldid -S"$GIT_ROOT/Application/Chromatic/Entitlements.plist" "./Applications/chromatic.app/chromatic"
-plutil -replace "CFBundleDisplayName" -string "Alpha" "./Applications/chromatic.app/Info.plist"
-plutil -replace "CFBundleIdentifier" -string "wiki.qaq.chromatic.alpha" "./Applications/chromatic.app/Info.plist"
-plutil -replace "CFBundleShortVersionString" -string "$TIMESTAMP" "./Applications/chromatic.app/Info.plist"
+ldid -S"$GIT_ROOT/Application/Saily/Entitlements.plist" "./Applications/saily.app/saily"
+plutil -replace "CFBundleDisplayName" -string "Alpha" "./Applications/saily.app/Info.plist"
+plutil -replace "CFBundleIdentifier" -string "wiki.qaq.saily.alpha" "./Applications/saily.app/Info.plist"
+plutil -replace "CFBundleShortVersionString" -string "$TIMESTAMP" "./Applications/saily.app/Info.plist"
 
-# copy scaned license into chromatic.app/licenses
-cp -r "$GIT_ROOT/build/License/ScannedLicense" "./Applications/chromatic.app/Bundle/ScannedLicense"
+# copy scaned license into saily.app/licenses
+cp -r "$GIT_ROOT/build/License/ScannedLicense" "./Applications/saily.app/Bundle/ScannedLicense"
 
 mkdir -p usr/sbin/
 cp -r "$WORKING_ROOT/DerivedDataExec/Build/Products/Debug-iphoneos/rootspawn.app/rootspawn" "./usr/sbin/chromaticspawn"
@@ -94,7 +94,7 @@ sed -i '' "s/@@VERSION@@/2.1-DEV-$TIMESTAMP/g" ./DEBIAN/control
 
 chmod -R 0755 DEBIAN
 
-PKG_NAME="chromatic.dev.ci.$TIMESTAMP.deb"
+PKG_NAME="saily.dev.ci.$TIMESTAMP.deb"
 dpkg-deb -b . "../$PKG_NAME"
 
 echo "Finished build at $WORKING_ROOT"

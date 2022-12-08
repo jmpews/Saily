@@ -59,7 +59,7 @@ fi
 mv Applications Payload
 
 # zip payload
-zip -r "chromatic.relsan.$TIMESTAMP.ipa" Payload # release sandboxed
+zip -r "saily.relsan.$TIMESTAMP.ipa" Payload # release sandboxed
 
 cd "$GIT_ROOT/build" || exit
 

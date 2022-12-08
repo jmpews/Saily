@@ -1,6 +1,6 @@
 //
 //  Dog.swift
-//  Chromatic
+//  Saily
 //
 //  Created by Lakr Aream on 12/11/20.
 //

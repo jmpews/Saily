@@ -1,6 +1,6 @@
 //
 //  RepoManager.swift
-//  Chromatic
+//  Saily
 //
 //  Created by Lakr Aream on 2020/4/18.
 //  Copyright © 2020 Lakr Aream. All rights reserved.
@@ -11,7 +11,7 @@ import Foundation
 import PropertyWrapper
 import SwiftThrottle
 
-internal let kRepositoryCenterIdentity = "wiki.qaq.chromatic.RepositoryCenter"
+internal let kRepositoryCenterIdentity = "wiki.qaq.saily.RepositoryCenter"
 
 /// Repository Center is used to manage any software distribution sources
 public final class RepositoryCenter {
@@ -109,8 +109,8 @@ public final class RepositoryCenter {
 
         let storeDirPrefix = UserDefaults
             .standard
-            .value(forKey: "wiki.qaq.chromatic.storeDirPrefix") as? String
-            ?? "wiki.qaq.chromatic"
+            .value(forKey: "wiki.qaq.saily.storeDirPrefix") as? String
+            ?? "wiki.qaq.saily"
 
         guard let documentLocation = FileManager
             .default

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_PATH="/Applications/chromatic.app"
+APP_PATH="/Applications/saily.app"
 
 if [ -d "$APP_PATH" ]; then
     chown -R root:wheel "$APP_PATH"
@@ -25,5 +25,5 @@ if [ -n "$chromaticAuxiliaryExec" ]; then
 fi
 
 echo "[*] reloading icon cache for springboard..."
-uicache -p /Applications/chromatic.app
+uicache -p /Applications/saily.app
 echo "[*] completed"

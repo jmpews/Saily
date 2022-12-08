@@ -48,7 +48,7 @@ We are using [bugsnag](https://www.bugsnag.com/) for bug/crash tracking in appli
 Additionally, if your issue is related to a crash or similar cases, there are some recommended info for you to include in the issue report.
 
 - Your Bugsnag ID, in the Setting page or application log, will provide us a backtrace with code level diagnostic data. It does not contain any privacy related information.
-- The application log, generally located at `/var/mobile/Documents/wiki.qaq.chromatic/Journal/`, will be helpful for tracking the issue. It is a plain text document and may include sensitive privacy related info (eg: searched text, repo urls ...), so check it before upload.
+- The application log, generally located at `/var/mobile/Documents/wiki.qaq.saily/Journal/`, will be helpful for tracking the issue. It is a plain text document and may include sensitive privacy related info (eg: searched text, repo urls ...), so check it before upload.
 
 "Your next bug is not a bug, it's a feature." - Apple Inc.
 

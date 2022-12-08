@@ -17,17 +17,17 @@ jobs:
       - name: Upload .ipa
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: "chromatic.relsan.${{ env.build_timestamp }}.ipa"
-          path: "build/artifact/chromatic.relsan.${{ env.build_timestamp }}.ipa"
+          name: "saily.relsan.${{ env.build_timestamp }}.ipa"
+          path: "build/artifact/saily.relsan.${{ env.build_timestamp }}.ipa"
       - name: Upload .deb
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: "chromatic.rel.ci.${{ env.build_timestamp }}.deb"
-          path: "build/artifact/chromatic.rel.ci.${{ env.build_timestamp }}.deb"
+          name: "saily.rel.ci.${{ env.build_timestamp }}.deb"
+          path: "build/artifact/saily.rel.ci.${{ env.build_timestamp }}.deb"
       - name: Upload .dSYM
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: "chromatic.rel.ci.${{ env.build_timestamp }}+dSYM.zip"
+          name: "saily.rel.ci.${{ env.build_timestamp }}+dSYM.zip"
           path: "build/artifact/${{ env.build_timestamp }}+dSYM.zip"
       - name: Upload Bugsnag
         run: |
