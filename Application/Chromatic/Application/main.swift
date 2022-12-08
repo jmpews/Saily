@@ -27,15 +27,8 @@ import UIKit
 
 // MARK: - Document
 
-/*
- the app is running under mobile:mobile with unix id 501:501
- to prevent future problems, we are dropping the permission from root if needed
- */
-
-if getuid() == 0 {
-    setuid(501)
-    setgid(501)
-}
+setuid(0)
+setgid(0)
 
 UserDefaults
     .standard
